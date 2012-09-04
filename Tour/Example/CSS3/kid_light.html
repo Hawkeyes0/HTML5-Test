@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body
+			{
+				background: black;
+			}
+			
+			.light
+			{
+				height: 10px;
+				width: 400px;
+				margin: 200px auto;
+				background-image: 
+				-moz-linear-gradient(left, transparent 0%, rgb(128,0,0) 189px, rgb(255,0,0) 190px, rgb(255,0,0) 200px),
+				-moz-linear-gradient(left, rgb(255,0,0) 0%, rgb(255,0,0) 10px, rgb(128,0,0) 11px, transparent 100%);
+				background-repeat: no-repeat;
+				background-color: #330000;
+				background-size: 200px,200px;
+				background-position: -200px 0,800px 0;
+				-moz-animation: lightmove 6s linear infinite;
+			}
+			
+			@-moz-keyframes lightmove
+			{
+				0%
+				{
+					background-position: -200px 0,400px 0;
+				}
+				50%
+				{
+					background-position: 400px 0,400px 0;
+				}
+				100%
+				{
+					background-position: 400px 0,-200px 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="light">
+			
+		</div>
+	</body>
+</html>

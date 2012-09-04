@@ -1,0 +1,90 @@
+﻿<html>
+<head>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		
+		.happywrapper {
+			top: 100px;
+			position: absolute;
+			height: 400px;
+			width: 100%;
+			vertical-align: middle;
+		}
+		
+		.happybg {
+			width: 100px;
+			height: 100px;
+			margin: 130px;
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			background: none red;
+			transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			-o-transform: rotate(45deg);
+			
+			transition: width 3s ease-in, height 3s ease-in, transform 3s ease-in, margin 3s ease-in;
+			-moz-transition: width 3s ease-in, height 3s ease-in, -moz-transform 3s ease-in, margin 3s ease-in;
+			-webkit-transition: width 3s ease-in, height 3s ease-in, -webkit-transform 3s ease-in, margin 3s ease-in;
+			-o-transition: width 3s ease-in, height 3s ease-in,-o-transform 3s ease-in, margin 3s ease-in;
+		}
+		
+		.happytxt {
+			line-height: 100px;
+			font-size: 80px;
+			font-family: 华文行楷;
+			text-align: center;
+			transform: rotate(135deg);
+			-moz-transform: rotate(135deg);
+			-ms-transform: rotate(135deg);
+			-webkit-transform: rotate(135deg);
+			-o-transform: rotate(135deg);
+			
+			transition: line-height 3s ease-in, font-size 3s ease-in, transform 3s ease-in;
+			-moz-transition: line-height 3s ease-in, font-size 3s ease-in, -moz-transform 3s ease-in;
+			-webkit-transition: line-height 3s ease-in, font-size 3s ease-in, -webkit-transform 3s ease-in;
+			-o-transition: line-height 3s ease-in, font-size 3s ease-in,-o-transform 3s ease-in;
+		}
+		
+		.happybg:hover {
+			width: 200px;
+			height: 200px;
+			margin: 75px 80px;
+			transform: rotate(765deg);
+			-moz-transform: rotate(765deg);
+			-ms-transform: rotate(765deg);
+			-webkit-transform: rotate(765deg);
+			-o-transform: rotate(765deg);
+		}
+		
+		.happybg:hover .happytxt {
+			font-size: 170px;
+			line-height: 200px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="happybg" style="top: 100px; margin-left: -250px; position: absolute;">
+		<div class="happytxt">
+			福
+		</div>
+	</div>
+	<div class="happybg" style="top: 100px; margin-left: -50px; position: absolute;">
+		<div class="happytxt">
+			福
+		</div>
+	</div>
+	<div class="happybg" style="top: 100px; margin-left: 150px; position: absolute;">
+		<div class="happytxt">
+			福
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+div>header
+{
+	background: -moz-linear-gradient(rgba(190,190,237, 0.5), rgba(255, 102, 102, 0.2) 70%);
+	line-height: 30px;
+	font-size: 24px;
+	padding-left: 15px;
+	border-radius: 5px 5px 0 0;
+}
+
+div>section{
+	border-radius: 0 0 5px 5px;
+	border-color: rgba(255,102,102,0.2);
+	border-width: 0 1px 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+div.news-item>header
+{
+	background: none wheat;
+	line-height: 26px;
+	font-size: 16px;
+	font-style: italic;
+	border-radius: 13px 0 0 13px;
+	color: #333333;
+	padding-left: 26px;
+	position: relative;
+}
+
+div.news-item>header:before
+{
+	content: " ";
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background: black;
+	margin-left: -18px;
+	margin-top: 8px;
+	border-radius: 5px;
+}
+
+div.news-item>header:after
+{
+	content: " ";
+	position: absolute;
+	border-width: 13px 20px;
+	border-style: solid;
+	border-color: transparent black transparent transparent;
+	width: 0;
+	height: 0;
+	margin-right: 0;
+	right: 0;
+}
+
+div.news-item>section
+{
+	border: none;
+	margin-bottom: 2em;
+}
+
+#content section
+{
+	padding: 10px;
+}
+
+p
+{
+	text-indent: 2em;
+}

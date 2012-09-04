@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			.btn
+			{
+				width: 300px;
+				height: 100px;
+				position: relative;
+				margin: 50px 100px;
+				overflow: hidden;
+			}
+			
+			.btn-btn
+			{
+				width: 74px;
+				height: 74px;
+				position: absolute;
+				z-index: 1;
+				padding: 10px;
+				border: 3px solid darkblue;
+				border-radius: 15px;
+				text-align: center;
+				background: blue;
+				color: white;
+			}
+			
+			.btn-btn *
+			{
+				cursor: pointer;
+			}
+			
+			.btn-txt
+			{
+				position: absolute;
+				top: 10px;
+				bottom: 10px;
+				left: 10px;
+				right: 10px;
+				vertical-align: middle;
+			}
+			
+			.btn-desc
+			{
+				position: absolute;
+				width: 185px;
+				height: 60px;
+				right: 200px;
+				padding: 5px 5px 5px 10px;
+				margin: 12px 0;
+				border-style: solid;
+				border-color: darkblue darkblue darkblue transparent;
+				border-width: 3px;
+				border-radius: 0 15px 15px 0;
+				-moz-transition: right 1s ease 0.5s;
+			}
+			
+			.btn-btn:hover~.btn-desc
+			{
+				right: 0;
+			}
+			
+			.btn-btn:hover
+			{
+				background: lightblue;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="btn">
+			<div class="btn-btn">
+				<span class="btn-txt">Click me!</span>
+			</div>
+			<div class="btn-desc">
+				Click me, you will understand what happiness was.
+			</div>
+		</div>
+		<div class="btn">
+			<div class="btn-btn">
+				<span class="btn-txt">Click me!</span>
+			</div>
+			<div class="btn-desc">
+				Click me, you will understand what happiness was.
+			</div>
+		</div>
+		<div class="btn">
+			<div class="btn-btn">
+				<span class="btn-txt">Click me!</span>
+			</div>
+			<div class="btn-desc">
+				Click me, you will understand what happiness was.
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			dl
+			{
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				width: 800px;
+				height: 800px;
+			}
+			
+			dt
+			{
+				float: left;
+				margin-right: -4px;
+				padding: 4px 8px;
+				border-radius: 8px 8px 0 0;
+				border: 1px solid black;
+				background: white;
+				cursor: pointer;
+			}
+			
+			dd
+			{
+				position: absolute;
+				left: 0px;
+				top: 29px;
+				margin: 0;
+				padding: 10px;
+				clear: both;
+				width: -moz-calc(100% - 22px);
+				border: 1px solid black;
+				background: lightgreen;
+			}
+			
+			dt:hover
+			{
+				background: lightblue;
+				z-index: 1;
+			}
+			
+			.tab1:hover~.tab1-content,
+			.tab2:hover~.tab2-content,
+			.tab3:hover~.tab3-content,
+			.tab4:hover~.tab4-content,
+			.tab5:hover~.tab5-content
+			{
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<dl>
+			<dt class="tab1">tab1</dt>
+			<dd class="tab1-content">This is tab1 content.</dd>
+			<dt class="tab2">tab2</dt>
+			<dd class="tab2-content">This is tab2 content.</dd>
+			<dt class="tab3">tab3</dt>
+			<dd class="tab3-content">This is tab3 content.</dd>
+			<dt class="tab4">tab4</dt>
+			<dd class="tab4-content">This is tab4 content.</dd>
+			<dt class="tab5">tab5</dt>
+			<dd class="tab5-content">This is tab5 content.</dd>
+		</dl>
+	</body>
+</html>
