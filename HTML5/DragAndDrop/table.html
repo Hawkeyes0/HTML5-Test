@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		.drag{
+			border: 1px solid black;
+		}
+		table{
+			float: left;
+			margin: 16px;
+		}
+		tbody tr{
+			background: #ddf;
+		}
+		tbody tr:nth-child(odd){
+			background: #dfd;
+		}
+	</style>
+	<script>
+		function allowDrag( event ) {
+			event.preventDefault();
+		}
+		
+		function drag( event ) {
+			event.dataTransfer.setData( "Obj", event.target.id );
+		}
+		
+		function drop( event ) {
+			event.preventDefault();
+			var obj = event.dataTransfer.getData( "Obj" );
+			console.log(obj);
+			event.currentTarget.tBodies[0].appendChild( document.getElementById( obj ) )
+		}
+	</script>
+</head>
+<body>
+	<table class="drag" ondrop="drop(event)" ondragover="allowDrag(event)">
+		<thead>
+			<tr>
+				<th>col1</th>
+				<th>col2</th>
+				<th>col3</th>
+				<th>col4</th>
+				<th>col5</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="r1" draggable="true" ondragstart="drag(event)">
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr id="r2" draggable="true" ondragstart="drag(event)">
+				<td>2</td>
+				<td>2</td>
+				<td>2</td>
+				<td>2</td>
+				<td>2</td>
+			</tr>
+			<tr id="r3" draggable="true" ondragstart="drag(event)">
+				<td>3</td>
+				<td>3</td>
+				<td>3</td>
+				<td>3</td>
+				<td>3</td>
+			</tr>
+			<tr id="r4" draggable="true" ondragstart="drag(event)">
+				<td>4</td>
+				<td>4</td>
+				<td>4</td>
+				<td>4</td>
+				<td>4</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="drag" ondrop="drop(event)" ondragover="allowDrag(event)">
+		<thead>
+			<tr>
+				<th>col1</th>
+				<th>col2</th>
+				<th>col3</th>
+				<th>col4</th>
+				<th>col5</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr id="r5" draggable="true" ondragstart="drag(event)">
+				<td>5</td>
+				<td>5</td>
+				<td>5</td>
+				<td>5</td>
+				<td>5</td>
+			</tr>
+			<tr id="r6" draggable="true" ondragstart="drag(event)">
+				<td>6</td>
+				<td>6</td>
+				<td>6</td>
+				<td>6</td>
+				<td>6</td>
+			</tr>
+			<tr id="r7" draggable="true" ondragstart="drag(event)">
+				<td>7</td>
+				<td>7</td>
+				<td>7</td>
+				<td>7</td>
+				<td>7</td>
+			</tr>
+			<tr id="r8" draggable="true" ondragstart="drag(event)">
+				<td>8</td>
+				<td>8</td>
+				<td>8</td>
+				<td>8</td>
+				<td>8</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

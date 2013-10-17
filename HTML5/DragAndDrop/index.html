@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		.drag{
+			height: 300px;
+			border: 1px solid black;
+		}
+	</style>
+	<script>
+		function allowDrag( event ) {
+			event.preventDefault();
+		}
+		
+		function drag( event ) {
+			event.dataTransfer.setData( "Obj", event.target.id );
+		}
+		
+		function drop( event ) {
+			event.preventDefault();
+			var obj = event.dataTransfer.getData( "Obj" );
+			console.log(obj);
+			event.target.appendChild( document.getElementById( obj ) );
+		}
+	</script>
+</head>
+<body>
+	<div class="drag" ondrop="drop(event)" ondragover="allowDrag(event)">
+		<img id="img" src="img_logo.gif" draggable="true" ondragstart="drag(event, this)" />
+	</div>
+	<br/>
+	<div class="drag" ondrop="drop(event)" ondragover="allowDrag(event)">
+	</div>
+</body>
+</html>
