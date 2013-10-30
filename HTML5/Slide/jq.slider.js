@@ -20,6 +20,11 @@
 			this.$slides = this.$el.children(".ex-slide");
 			this.slidesCount = this.$slides.length;
 			this.current = this.options.current;
+			this.isOldBrowser = false;
+			
+			var regx = /MSIE (\d*)/ig;
+			var m = regx.exec(navigator.appVersion);
+			this.isOldBrowser = m != null && m[1] < 10;
 			
 			if ( this.current < 0 || this.current >= this.slidesCount ) {
 				this.current = 0;
@@ -60,7 +65,8 @@
 			if ( this.current === page || this.isAnimating )
 				return false;
 			
-			this.isAnimating = true;
+			if ( this.isOldBrowser === false )
+				this.isAnimating = true;
 			
 			var classTo, classFrom, d;
 			if ( !dir ) {
