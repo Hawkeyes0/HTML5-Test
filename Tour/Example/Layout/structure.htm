@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>结构式布局</title>
+	<style>
+		.layout {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		.header {
+			height: 150px;
+			background: #ddf;
+		}
+		.nav {
+			line-height: 32px;
+			background: #dff;
+		}
+		.aside {
+			width: 260px;
+			height: 500px;
+			background: #dfd;
+		}
+		.footer {
+			height: 50px;
+			background: #ffd;
+		}
+	</style>
+</head>
+<body>
+	<h2>结构式布局</h2>
+	<table class="layout">
+		<tr>
+			<td class="header">header</td>
+		</tr>
+		<tr>
+			<td class="nav">navigator</td>
+		</tr>
+	</table>
+	<table class="layout">
+		<tr>
+			<td class="aside">aside</td>
+			<td class="content">content</td>
+		</tr>
+	</table>
+	<table class="layout">
+		<tr>
+			<td class="footer">footer</td>
+		</tr>
+	</table>
+</body>
+</html>
