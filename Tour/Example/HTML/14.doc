@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	</head>
+
+	<body>
+	
+		<p><b>加粗</b></p>
+		<p><strong>强壮</strong></p>
+		<p><big>放大</big></p>
+		<p><i>斜体</i></p>
+		<p><em>强调</em></p>
+		<p><code>计算机输出内容（代码内容）</code></p>
+		<p><sub>下角表</sub> 和 <sup>上角标</sup></p>
+
+		<hr/>
+		
+		<pre>
+		这是
+		预排版文字。
+		它保留了       空格
+		和换行符。
+		</pre>
+
+		<p>pre标记适用于显示计算机代码:</p>
+
+		<pre>
+		for i = 1 to 10
+			 print i
+		next i
+		</pre>
+		
+		<hr/>
+		
+		<p><b>Note:</b> 这些标记通常用来显示程序代码。</p>
+
+		<code>计算机代码</code>
+		<br />
+		<kbd>键盘输入</kbd>
+		<br />
+		<tt>Teletype text</tt>
+		<br />
+		<samp>示例文本</samp>
+		<br />
+		<var>程序变量</var>
+		<br />
+		
+		<hr/>
+		
+		Address:
+		<address>
+		Written by W3Schools.com<br />
+		<a href="mailto:us@example.org">Email us</a><br />
+		Address: Box 564, Disneyland<br />
+		Phone: +12 34 56 78
+		</address>
+		
+		<hr/>
+		
+		缩写与短语：
+		<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+		<p>Can I get this <acronym title="as soon as possible">ASAP</acronym>?</p>
+		
+		<hr/>
+		
+		文字方向：
+		<bdo dir="rtl">
+		Here is some Hebrew text. 从右至左。
+		</bdo>
+		
+		<hr/>
+		
+		A long quotation:
+		<blockquote>
+		This is a long quotation. This is a long quotation. This is a long quotation. This is a long quotation. This is a long quotation.
+		</blockquote>
+		
+		A short quotation:
+		<q>This is a short quotation</q>
+		
+		<hr/>
+		
+		<p>My favorite color is <del>blue</del> <ins>red</ins>!</p>
+
+	</body>
+
+</html>

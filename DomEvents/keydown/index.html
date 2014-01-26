@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function tabLoop(){
+		self = this;
+		self.loop = $("input,select");
+		self.pos = 0;
+		self.next = function ( event, target ) {
+			if ( event.keyCode == 13 ) {
+				self.pos = self.loop.toArray().indexOf( target );
+				
+				self.pos++;
+				if ( self.pos >= self.loop.length ) self.pos = 0;
+
+				console.log( self.pos );
+				self.loop.eq( self.pos ).focus();
+				return false;
+			}
+		};
+	}
+	
+	$( function () {
+		var $tabLoop = new tabLoop();
+		$("input, select").keydown( function ( event ) {
+			var me = this;
+			$tabLoop.next( event, me );
+		} );
+	} );
+</script>
+</head>
+<body>
+	<input />
+	<input />
+	<input type="button" value="button" />
+</body>
+</html>
