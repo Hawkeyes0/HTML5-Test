@@ -1,0 +1,30 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body > * {
+	/*max-width: 430px;*/
+	margin: 10px auto;
+	text-align: center;
+}
+
+#target {
+	color: lime;
+}
+
+table {
+	border-collapse: collapse
+}
+
+table td {
+	border: 1px solid #333;
+	width: 100px;
+	height: 100px;
+}
