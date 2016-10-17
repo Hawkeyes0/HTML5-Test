@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title></title>
-<script src="http://api.jquery.com/jquery-wp-content/themes/jquery/js/jquery-1.9.1.min.js"></script>
 <script>
 	window.onbeforeunload = function ( event ) {
 		event.returnValue = 'Really leave?';
-		console.log ( event );
+		//console.log ( event );
+		return event.returnValue;
 	}
 </script>
 </head>
