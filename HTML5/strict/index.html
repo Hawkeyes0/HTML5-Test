@@ -1,18 +1,34 @@
 <html>
-	<head>
-		<title>strict mode test</title>
-		<link rel="stylesheet" href="main.css">
-		<meta charset="utf-8">
-	</head>
-	<body>
-		<div class="wrapper">
-			<h1>normal mode</h1>
-			<div id="normal-output" class="output"></div>
-			<hr/>
-			<h1>strict mode</h1>
-			<div id="strict-output" class="output"></div>
-		</div>
-		<script src="normal.js" type="text/javascript"></script>
-		<script src="strict.js" type="text/javascript"></script>
-	</body>
+
+<head>
+    <title>strict mode test</title>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>normal mode</h1>
+        <div id="normal-output" class="output"></div>
+        <hr/>
+        <h1>strict mode</h1>
+        <div id="strict-output" class="output"></div>
+    </div>
+    <script src="tester.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var normal = new Tester(false, "normal-output");
+        var strict = new Tester(true, "strict-output");
+        var coll = new TesterCollection([normal, strict]);
+        coll.test("array && 'true' || 'false'");
+        coll.test("window.array && 'true' || 'false'");
+        coll.test("('array' in window) && 'true' || 'false'");
+        coll.test("typeof array === 'undefined' && 'true' || 'false'");
+        coll.test("delete window.array; array = []");
+        coll.test("var obj1 = {}; Object.defineProperty(obj1, 'x', { value: 42, writable: false }); obj1.x = 9; obj1.x;");
+        coll.test("var obj2 = { get x() { return 17; } }; obj2.x = 5; obj2.x;");
+        coll.test("var o = { p: 1, p: 2 }; JSON.stringify(o);");
+        coll.test("var n = 015 + 32; n;")
+    </script>
+</body>
+
 </html>
