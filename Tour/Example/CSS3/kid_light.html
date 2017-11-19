@@ -19,7 +19,7 @@
 				background-color: #330000;
 				background-size: 200px,200px;
 				background-position: -200px 0,800px 0;
-				-moz-animation: lightmove 6s linear infinite;
+				-moz-animation: lightmove2 6s, lightmove 6s linear 6s infinite;
 			}
 			
 			@-moz-keyframes lightmove
@@ -35,6 +35,21 @@
 				100%
 				{
 					background-position: 400px 0,-200px 0;
+				}
+			}
+			@-moz-keyframes lightmove2
+			{
+				0%
+				{
+					width: 400px;
+				}
+				50%
+				{
+					width: 500px;
+				}
+				100%
+				{
+					width: 400px;
 				}
 			}
 		</style>
