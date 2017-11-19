@@ -2,14 +2,47 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title></title>
+<title>beforeunload event test</title>
+<script>
+	var breadOptions = {};
+	function frameLoad(sender, event) {
+		var actNav = sender.contentWindow.location.toString();
+		var willNav = breadOptions["clicked-link"] && breadOptions["clicked-link"].href;
+
+		console.log('will: ' + willNav + '\n act: ' + actNav);
+		if (willNav && willNav == actNav) {
+			document.getElementById('bread').innerHTML = willNav;
+			var coll = document.getElementsByClassName('selected');
+			while (coll[0]) {
+				coll[0].classList.remove('selected');
+			}
+			breadOptions["clicked-link"].classList.add('selected');
+		}
+		delete breadOptions['clicked-link'];
+	}
+
+	function linkClick(sender, event) {
+		breadOptions["clicked-link"] = sender;
+	}
+</script>
+<style>
+	a {
+		padding: 4px 8px;
+		border: 1px solid darkblue;
+	}
+
+	a.selected {
+		border: 1px solid lightcoral;
+	}
+</style>
 </head>
 <body>
 	<p>
-		<a href="frame1.htm" target="frame">change to frame1</a>
+		<a href="frame1.htm" target="frame" onclick="linkClick(this, event)">change to frame1</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="frame2.htm" target="frame">change to frame2</a>
+		<a href="frame2.htm" target="frame" onclick="linkClick(this, event)">change to frame2</a>
 	</p>
-	<iframe name="frame" src="frame1.htm"></iframe>
+	<p id="bread">&nbsp;</p>
+	<iframe name="frame" src="frame1.htm" onload="frameLoad(this, event)"></iframe>
 </body>
 </html>

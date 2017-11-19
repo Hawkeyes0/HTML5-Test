@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+var PeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+var SessionDescription = window.RTCSessionDescription || window.mozRTCSessionDescription || window.webkitRTCSessionDescription;
+var GET_USER_MEDIA = navigator.getUserMedia ? "getUserMedia" :
+                     navigator.mozGetUserMedia ? "mozGetUserMedia" :
+                     navigator.webkitGetUserMedia ? "webkitGetUserMedia" : "getUserMedia";
+var cfg = {iceServers:[{urls:'stun:stun.services.mozilla.com'}]};
+
+function endCall(){
+	var v = document.getElementById("video");
+	v.pause();
+	pc.close();
+}
+
+function error(err) {
+	console.log(err);
+	endCall();
+}
+</script>
+<script>
+var pc = new PeerConnection(cfg);
+pc.onaddstream = function(obj) {
+	var v = document.createElement("video");
+	v.id = 'video';
+	document.getElementById("content").appendChild(v);
+	v.srcObject = obj.stream;
+}
+
+navigator[GET_USER_MEDIA]({video: true}, function( stream ){
+	pc.onaddstream({stream: stream});
+	pc.addStream(stream);
+	pc.createOffer( function(offer) {
+		pc.setLocalDescription(offer, error);
+	});
+}, error);
+</script>
+</body>
+</html>
